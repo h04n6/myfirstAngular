@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Cơ quan</h1>
+      </div>
+      <a class="btn btn-primary mt-2 mb-2" [routerLink]="['/category-add']" routerLinkActive="router-link-active">
+        Thêm mới
+      </a>
+      <hr>
+      <table class="table table-striped table-bordered">
+        <thead class="thead-light">
+          <th></th>
+          <th>Tên cơ quan</th>
+          <th>Mô tả</th>
+          <th>Người dùng thuộc cơ quan</th>
+          <th>Thao tác</th>
+        </thead>
+        <tbody *ngIf="total == 0">
+          <tr>
+            <td colspan="3">
+              Không có dữ liệu
+            </td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="total > 0">
+          <tr *ngFor="let item of agencies | paginate: { itemsPerPage: 10, currentPage: page }">
+            <td>
+              {{item.id}}
+            </td>
+            <td>
+              {{item.name}}
+            </td>
+            <td>
+              {{item.description}}
+            </td>
+            <td>
+              {{item.users}}
+            </td>
+            <td class="text-center">
+              <a class="mr-2" [routerLink]="['/category-edit/' + item.id]" routerLinkActive="router-link-active">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              </a>
+              <a (click)="remove(item.id)" href="javascript:;">
+                <i class="fa fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <pagination-controls class='float-right' (pageChange)="page = $event" responsive="true" previousLabel="Trước" nextLabel="Sau"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>
