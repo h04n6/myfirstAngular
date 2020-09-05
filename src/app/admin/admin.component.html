@@ -22,33 +22,21 @@
             <div class="sidebar-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            <i class="fas fa-home"></i>
+                        <a class="nav-link active" [routerLink]="['/admin']" routerLinkActive="router-link-active">
+                            <i class="fa fa-home"></i>
                             Dashboard <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-shopping-cart"></i>
-                            Orders
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-cubes"></i>
-                            Products
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-users"></i>
-                            Customers
+                        <a class="nav-link" [routerLink]="['/admin/agency']" routerLinkActive="router-link-active">
+                            <i class="fa fa-building"></i>
+                            Cơ quan
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="fas fa-chart-line"></i>
-                            Reports
+                            Báo cáo
                         </a>
                     </li>
                 </ul>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AgencyService } from '../services/agency.service';
+import { ActivatedRoute } from '@angular/router';
+import { AgencyModel } from '../models/AgencyModel';
 
 @Component({
   selector: 'app-agency',
@@ -11,6 +13,10 @@ export class AgencyComponent implements OnInit {
   agencies = [];
   total:number = 0;
   page:number = 1;
+
+  //edit agency
+  agencyId:number = 0;
+  model:AgencyModel = new AgencyModel();
 
   constructor(
     private agencyService : AgencyService
