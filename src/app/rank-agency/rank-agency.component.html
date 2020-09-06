@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Bảng xếp hạng đơn vị</h1>
+        </div>
+        <table class="table table-striped table-bordered">
+          <thead class="thead-light">
+            <th>Tên đơn vị</th>
+            <th>Tổng thành viên</th>
+            <th>Tổng quãng đường</th>
+            <th>Tổng thời gian</th>
+          </thead>
+          <tbody *ngIf="total == 0">
+            <tr>
+              <td colspan="3">
+                Không có dữ liệu
+              </td>
+            </tr>
+          </tbody>
+          <tbody *ngIf="total > 0">
+            <tr *ngFor="let item of rankagency | paginate: { itemsPerPage: 5, currentPage: page }">
+                <td>{{item.name}}</td>
+                <td>{{item.count_member}}</td>
+                <td>{{item.distance}}</td>
+                <td>{{item.moving_time}}</td> 
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <pagination-controls class='float-right' (pageChange)="page = $event" responsive="true" previousLabel="Trước" nextLabel="Sau"></pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
