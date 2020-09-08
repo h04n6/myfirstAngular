@@ -18,6 +18,11 @@ import { CategoryAddComponent } from './category-add/category-add.component';
 import { CategoryEditComponent } from './category-edit/category-edit.component';
 import { ProductComponent } from './product/product.component';
 import { AgencyComponent } from './agency/agency.component';
+import { RankUserComponent } from './rank-user/rank-user.component';
+import { RankAgencyComponent } from './rank-agency/rank-agency.component';
+import {RaceService } from './services/race.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RankTopUserComponent } from './rank-top-user/rank-top-user.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,11 @@ import { AgencyComponent } from './agency/agency.component';
     CategoryAddComponent,
     CategoryEditComponent,
     ProductComponent,
-    AgencyComponent
+    AgencyComponent,
+    RankUserComponent,
+    RankAgencyComponent,
+    DashboardComponent,
+    RankTopUserComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +50,8 @@ import { AgencyComponent } from './agency/agency.component';
   providers: [
     API,
     AccountService,
-    CategoryService
+    CategoryService,
+    RaceService 
   ],
   bootstrap: [AppComponent]
 })
