@@ -25,7 +25,13 @@ const routes: Routes = [
         component: AgencyComponent,
         canActivate: [AuthGuard],
         canActivateChild: [AuthGuard]
-      }
+      },
+      {
+		    path:'dashboard',
+        component: DashboardComponent,
+        canActivate: [AuthGuard],
+        canActivateChild: [AuthGuard]
+	    }
     ],
   },
   {
@@ -39,7 +45,25 @@ const routes: Routes = [
     component: CategoryEditComponent,
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard]
-  }
+  },
+  {
+    path:'rankuser',
+    component: RankUserComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard]
+  },
+  {
+    path:'rankagency',
+    component: RankAgencyComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard]
+  },
+  {
+    path:'ranktopuser',
+    component: RankTopUserComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard]
+  },
 
 ];
 
